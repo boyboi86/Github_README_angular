@@ -1,0 +1,23 @@
+{
+  "name": "leadiq_hw",
+  "version": "1.0.0",
+  "description": "leadiq_hw github call",
+  "main": "./src/index.js",
+  "scripts": {
+    "build": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  },
+  "devDependencies": {
+    "babel-angular": "0.0.5",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  }
+}
