@@ -1,0 +1,14 @@
+
+  <nav class="navbar navbar-light">
+    <h1 class="navbar-brand m-b-0" ng-model="user">{{ user }}</h1>
+    <a class="btn btn-primary pull-xs-right" href="/">Back</a>
+  </nav>
+<div class="row">
+  <div class="text-center col-md-8 col-md-offset-6" ng-controller="IndexCtrl">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="repo in repositories">
+        <a ng-model="user" ng-model="$index" ng-href="/{{ user }}/{{$index + 1}}" ng-click="fetchRM(user, $index)">{{ repo.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
