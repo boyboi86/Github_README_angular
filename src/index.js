@@ -37,6 +37,11 @@ App.controller(IndexCtrl, ['$scope', '$location', '$http', '$routeParams', '$roo
 
   $http.get(ROOT_URL)
     .then(function(res){
+      if(res.status === 200 && !res.data.items[0]){
+        $location.path("/")
+        window.alert("User exist but no repositories has been created yet, please try another username!")
+      }
+
       $location.path(`/${user}`);
       $rootScope.repositories = res.data.items;
     })
@@ -49,7 +54,7 @@ App.controller(IndexCtrl, ['$scope', '$location', '$http', '$routeParams', '$roo
 /*To ensure the route params are consistant */
   $routeParams.index = $scope.$index + 1;
 
-/*Second $http for /:user/:$index route to get a list of readme.md within the repo*/
+/*Second $http for /:user/:$index route to get readme.md within the repo*/
   $scope.fetchRM = function(user, $index){
     const  {full_name} = $rootScope.repositories[$index];
     const RM_URL = `https://api.github.com/repos/${ full_name }/readme`
