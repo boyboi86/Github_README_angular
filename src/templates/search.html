@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light">
-  <h1 class="navbar-brand m-b-0" ng-model="user" style="color:white">{{ user }}</h1>
+  <h1 class="navbar-brand m-b-0" ng-model="user" style="color: #fdfeff">{{ user }}</h1>
   <a class="btn btn-primary pull-xs-right" href="/">Back</a>
 </nav>
   <!-- loader -->
@@ -12,7 +12,7 @@
     <ul class="list-group">
       <li class="list-group-item hvr-sweep-to-right" ng-repeat="repo in repositories">
         Project #{{ $index + 1 }}
-        <a class="pull-xs-right" ng-model="user" ng-model="$index" ng-href="/{{ user }}/{{$index + 1}}" ng-click="fetchRM(user, $index)">{{ repo.name }}</a>
+        <a class="pull-xs-right" ng-model="user" ng-model="$index" ng-href="/{{ user }}/{{$index + 1}}" ng-click="fetchRM(user, $index)" style="color: #3f687e">&nbsp{{ repo.name }}</a>
       </li>
     </ul>
   </div>
