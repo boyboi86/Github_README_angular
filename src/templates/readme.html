@@ -1,6 +1,6 @@
 <div ng-controller="IndexCtrl">
   <nav class="navbar navbar-light">
-    <h1 class="navbar-brand m-b-0" ng-model="name">Project {{ name }}</h1>
+    <h1 class="navbar-brand m-b-0 " ng-model="name" style="color:white">Project {{ name }}</h1>
     <a class="btn btn-primary pull-xs-right" href="/">Home</a>
   </nav>
   <!-- loader -->
@@ -8,5 +8,5 @@
     Loading..
   </div>
 <!-- Second $http data content (individual readme.html from specific repository)-->
-  <div ng-bind-html="content"></div>
+  <div ng-bind-html="content" style="color:white"></div>
 </div>

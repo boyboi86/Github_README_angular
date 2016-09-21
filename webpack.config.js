@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const debug = process.env.NODE_ENV !== "production";
 
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -18,7 +19,11 @@ module.exports = {
       query: {
         presets: ['angular']
       }
-    }]
+    },
+    {
+      test: /\.css$/,
+      loader: "style-loader!css-loader"
+     }]
   },
   devServer: {
     historyApiFallback: true,
