@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.8",
-    "angular-route": "^1.5.8"
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "markdown": "^0.5.0"
   },
   "devDependencies": {
     "babel-angular": "0.0.5",
