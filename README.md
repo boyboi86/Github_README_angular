@@ -23,6 +23,6 @@ If user or readme does not exist, you will be force back to the index page.
 
 `npm start` to initialize app.
 
-`npm deploy:WINDOWS` for Window users only. To set for production.
+`npm run deploy:WINDOWS` for Window users only. To set for production.
 
-`npm deploy` for all non-Window users. To set for production.
+`npm run deploy` for all non-Window users. To set for production.
