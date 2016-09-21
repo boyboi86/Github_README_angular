@@ -2,9 +2,11 @@
   "name": "leadiq_hw",
   "version": "1.0.0",
   "description": "leadiq_hw github call",
-  "main": "./src/index.js",
+  "main": "./src/bundle.js",
   "scripts": {
-    "build": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "deploy:WINDOWS": "set NODE_ENV=production && webpack -p",
+    "deploy": "NODE_ENV=production webpack -p"
   },
   "author": "",
   "license": "ISC",
