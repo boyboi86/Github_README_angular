@@ -1,8 +1,10 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
+const ngSanitize = require('angular-sanitize');
+const markdown = require( "markdown" ).markdown;
 
 /*Simple definition of controller to ensure no accidental typo*/
-const App = angular.module('app', [ngRoute]);
+const App = angular.module('app', [ngRoute, ngSanitize]);
 const IndexCtrl = 'IndexCtrl';
 
 /*All the routes used in this App*/
@@ -31,13 +33,16 @@ App.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
 App.controller(IndexCtrl, ['$scope', '$location', '$http', '$routeParams', '$rootScope', function($scope, $location, $http, $routeParams, $rootScope){
 
   $scope.user = $routeParams.user;
-/*First $http for /:user route to get a list of repos*/
+/*To ensure the route params for /:user/:index is consistant and logical*/
+  $routeParams.index = $scope.$index + 1;
+
+/*First $http for /:user route to get a list of repositories from specific username*/
   $scope.callUser = function (user){
   const ROOT_URL = `https://api.github.com/search/repositories?q=user:${user}&sort=stars&order=desc`
 
   $http.get(ROOT_URL)
     .then(function(res){
-      if(res.status === 200 && !res.data.items[0]){
+      if(res.status > 199 && res.status < 300 && !res.data.items[0]){
         $location.path("/")
         window.alert("User exist but no repositories has been created yet, please try another username!")
       }
@@ -51,21 +56,16 @@ App.controller(IndexCtrl, ['$scope', '$location', '$http', '$routeParams', '$roo
       console.error(err)
     })
   }
-/*To ensure the route params are consistant */
-  $routeParams.index = $scope.$index + 1;
 
-/*Second $http for /:user/:$index route to get readme.md within the repo*/
+/*Second $http for /:user/:index route to get readme.md within specific repository*/
   $scope.fetchRM = function(user, $index){
+    $rootScope.name = $rootScope.repositories[$index].name;
     const  {full_name} = $rootScope.repositories[$index];
-    const RM_URL = `https://api.github.com/repos/${ full_name }/readme`
-    $http.get(RM_URL)
+    const README_URL = `https://raw.githubusercontent.com/${full_name}/master/README.md`
+    $http.get(README_URL)
     .then(function(res){
       $location.path(`/${user}/${$index + 1}`);
-      console.log(res.data)
-      console.log(res.data.download_url);
-      $rootScope.content = res.data.download_url;
-
-
+      $rootScope.content=markdown.toHTML(res.data);
     })
     .catch(function(err){
       $location.path("/")
@@ -74,20 +74,4 @@ App.controller(IndexCtrl, ['$scope', '$location', '$http', '$routeParams', '$roo
     })
   }
 
-
-
-
-
-
 }]);
-//
-// Ctrl(ListCtrl, ['$scope', '$location', function($scope, $location){
-//
-// }])
-//
-// Ctrl(ReadCtrl, ['$scope', '$location', '$http', '$rootScope', '$routeParams', function($scope, $location, $http, $rootScope, $routeParams ){
-//     $routeParams.full_name = $rootScope.repositories.full_name;
-//     $scope.full_name = $ootScope.repositories.full_name;
-//
-//
-// }])

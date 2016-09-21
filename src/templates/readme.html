@@ -1,7 +1,12 @@
-
-<div ng-model="content" ng-controller="IndexCtrl">
-  <div ng-if="!content">
+<div ng-controller="IndexCtrl">
+  <nav class="navbar navbar-light">
+    <h1 class="navbar-brand m-b-0" ng-model="name">Project {{ name }}</h1>
+    <a class="btn btn-primary pull-xs-right" href="/">Home</a>
+  </nav>
+  <!-- loader -->
+  <div ng-model="content" ng-if="!content">
     Loading..
   </div>
-{{ content }}
+<!-- Second $http data content (individual readme.html from specific repository)-->
+  <div ng-bind-html="content"></div>
 </div>
