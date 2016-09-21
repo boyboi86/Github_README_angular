@@ -56,17 +56,9 @@ html, body {
   transform: scaleX(1);
 }
 
-.navbar {
-  color: white;
-}
-
 .list-group-item {
   background-color: rgba(255,255,255,0.5);
   font-weight: bolder;
-}
-
-a {
-  color: #3f687e;
 }
 
 input {
@@ -85,7 +77,7 @@ input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
 	display: none;
 }
-/*I couldn't find a perfect purple icon*/
+
 input[type=search] {
 	background: #2b2b2b url("icon.png") no-repeat 9px center;
   background-size: 25px;
@@ -109,7 +101,6 @@ input[type=search]:focus {
 	border-color: #010101;
   cursor:auto;
 }
-
 
 input:-moz-placeholder {
 	color: #999;
