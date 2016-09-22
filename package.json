@@ -8,7 +8,7 @@
     "deploy:WINDOWS": "set NODE_ENV=production && webpack -p && node ./src/server.js",
     "deploy": "NODE_ENV=production webpack -p && node ./src/server.js",
     "start": "node server.js",
-    "postinstall" : "NODE_ENV=production webpack -p"
+    "postinstall": "NODE_ENV=production webpack -p"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
     "angular-sanitize": "^1.5.8",
+    "express": "^4.14.0",
     "markdown": "^0.5.0"
   },
   "devDependencies": {
