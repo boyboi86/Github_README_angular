@@ -5,7 +5,9 @@ This is a simple AngularJS that calls individual Github repo readme, based on wh
 
 download zip file or `git clone` repo
 
-navigate to working directory, run `npm install` followed by `npm start` to initialize the app.
+navigate to working directory, run `npm install`
+
+if you are window user, run `npm run deploy:WINDOWS`, otherwise run `npm run deploy`
 
 Open browser to go http://localhost:8080 to view app.
 
@@ -21,8 +23,12 @@ If user or readme does not exist, you will be force back to the index page.
 
 ## Commands
 
-`npm start` to initialize app.
+`npm start` to initialize app. (For heroku deployment)
 
-`npm run deploy:WINDOWS` for Window users only. To set for production.
+`npm run postinstall` set production environment and bundle js files. (For heroku deployment)
 
-`npm run deploy` for all non-Window users. To set for production.
+`npm run deploy:WINDOWS` for Window users only. To set for production and initialize app.
+
+`npm run deploy` for all non-Window users. To set for production and initialize app.
+
+`npm run dev` for development purposes, runs webpack-dev-server.
