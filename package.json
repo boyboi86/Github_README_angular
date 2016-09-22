@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "deploy:WINDOWS": "set NODE_ENV=production && webpack -p && node ./src/server.js",
-    "deploy": "NODE_ENV=production && webpack -p && node ./src/server.js",
+    "deploy": "NODE_ENV=production webpack -p && node ./src/server.js",
     "start": "node ./src/server.js",
     "postinstall": "NODE_ENV=production webpack -p"
   },
