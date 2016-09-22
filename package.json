@@ -4,9 +4,11 @@
   "description": "leadiq_hw github call",
   "main": "./src/bundle.js",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "deploy:WINDOWS": "set NODE_ENV=production && webpack -p",
-    "deploy": "NODE_ENV=production webpack -p"
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "deploy:WINDOWS": "set NODE_ENV=production && webpack -p && node ./src/server.js",
+    "deploy": "NODE_ENV=production webpack -p && node ./src/server.js",
+    "start": "node server.js",
+    "postinstall" : "NODE_ENV=production webpack -p"
   },
   "author": "",
   "license": "ISC",
