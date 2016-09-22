@@ -11,7 +11,7 @@
     "deploy:WINDOWS": "set NODE_ENV=production && webpack -p && node ./src/server.js",
     "deploy": "NODE_ENV=production && webpack -p && node ./src/server.js",
     "start": "node server.js",
-    "postinstall": "NODE_ENV=production webpack -p"
+    "postinstall": "webpack -p"
   },
   "author": "",
   "license": "ISC",
