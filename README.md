@@ -13,7 +13,9 @@ Open browser to go http://localhost:8080 to view app.
 
 ## Usage
 
-Enter your github username then press enter.
+Click the input box (small github icon at the top corner)
+
+Enter your github username in the input box (small github icon) then press enter.
 
 Choose one of your existing repositories by clicking a link
 
