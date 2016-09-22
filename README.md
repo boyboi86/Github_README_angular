@@ -25,11 +25,13 @@ You will see your readme.md file
 
 If user or readme does not exist, you will be force back to the index page.
 
+Give it a try [Heroku app](https://desolate-dusk-68213.herokuapp.com/)
+
 ## Commands
 
-`npm start` to initialize app. (For heroku deployment)
+`npm start` to initialize app. (For heroku deployment, automatically done)
 
-`npm run postinstall` set production environment and bundle js files. (For heroku deployment)
+`npm run postinstall` set production environment and bundle js files. (For heroku deployment, automatically done)
 
 `npm run deploy:WINDOWS` for Window users only. To set for production and initialize app.
 
