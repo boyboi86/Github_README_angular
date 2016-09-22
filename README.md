@@ -3,6 +3,8 @@ This is a simple AngularJS that calls individual Github repo readme, based on wh
 
 ## Instructions
 
+Require node.js and node package manager (npm) to run
+
 download zip file or `git clone` repo
 
 navigate to working directory, run `npm install`
