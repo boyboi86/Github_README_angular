@@ -14,7 +14,7 @@ html, body {
 }
 
 .hvr-sweep-to-right {
-  display: inline-block;
+  cursor: pointer;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -22,7 +22,6 @@ html, body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
-  position: relative;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -63,7 +62,7 @@ html, body {
 
 input {
 	outline: none;
-  margin: 10px 0px 10px -5px;
+  margin: 10px 5px 10px 0px;
 
 }
 input[type=search] {
@@ -96,7 +95,7 @@ input[type=search] {
   cursor:pointer;
 }
 input[type=search]:focus {
-	width: 500px;
+	width: 250px;
 	background-color: #fff;
 	border-color: #010101;
   cursor:auto;
