@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light">
   <h1 class="navbar-brand m-b-0" ng-model="user" style="color: #fdfeff">{{ user }}</h1>
-  <a class="btn btn-primary pull-xs-right" href="/">Back</a>
+  <a class="btn btn-primary pull-sm-right nav-link" href="/">Back</a>
 </nav>
   <!-- loader -->
 <div ng-if="!repositories" ng-model="repositories">
@@ -8,11 +8,11 @@
 </div>
 <!-- first $http data content (individual user repositories)-->
 <div class="row">
-  <div class="text-center col-md-12" ng-controller="IndexCtrl">
+  <div class="text-center col-sm-6 offset-sm-3" ng-controller="IndexCtrl">
     <ul class="list-group">
-      <li class="list-group-item hvr-sweep-to-right" ng-repeat="repo in repositories">
+      <li class="list-group-item hvr-sweep-to-right" ng-model="user" ng-model="$index" ng-href="/{{ user }}/{{$index + 1}}" ng-click="fetchRM(user, $index)" ng-repeat="repo in repositories">
         Project #{{ $index + 1 }}
-        <a class="pull-xs-right" ng-model="user" ng-model="$index" ng-href="/{{ user }}/{{$index + 1}}" ng-click="fetchRM(user, $index)" style="color: #3f687e">&nbsp{{ repo.name }}</a>
+        <div class="pull-sm-right"  style="color: #3f687e">{{ repo.name }}</div>
       </li>
     </ul>
   </div>
