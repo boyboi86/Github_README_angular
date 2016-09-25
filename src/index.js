@@ -1,7 +1,7 @@
-const angular = require('angular');
-const ngRoute = require('angular-route');
-const ngSanitize = require('angular-sanitize');
-const markdown = require( "markdown" ).markdown;
+const angular = require( 'angular');
+const ngRoute = require( 'angular-route');
+const ngSanitize = require( 'angular-sanitize');
+const markdown = require( "markdown").markdown;
 
 /*Simple definition of controller to ensure no accidental typo*/
 const App = angular.module('app', [ngRoute, ngSanitize]);
@@ -35,7 +35,7 @@ App.controller('IndexCtrl', ['$scope', '$location', '$http', '$routeParams', '$r
 /*To ensure the route params for /:user/:index is consistant and logical*/
   $routeParams.index = $scope.$index + 1;
 
-/*First $http for /:user route to get a list of repositories from specific username*/
+/*First $http for /:user route to get a list of repositories =require( specific username*/
   $scope.callUser = function (user){
   const ROOT_URL = "https://api.github.com/search/repositories?q=user:" + user + "&sort=stars&order=desc"
 
@@ -63,7 +63,7 @@ App.controller('IndexCtrl', ['$scope', '$location', '$http', '$routeParams', '$r
     const README_URL = "https://raw.githubusercontent.com/" + full_name + "/master/README.md"
     $http.get(README_URL)
     .then(function(res){
-      $location.path("/"+ user + "/" + $index + 1);
+      $location.path(`/${user}/${$index + 1}`);
       $rootScope.content=markdown.toHTML(res.data);
     })
     .catch(function(err){
